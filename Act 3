@@ -1,0 +1,51 @@
+-- Insert data into Users table
+INSERT INTO Users (UserID, Username, FirstName, LastName, DateOfBirth, Password) VALUES
+(1, 'john_doe', 'John', 'Doe', '1990-05-15', 'hashedpassword1'),
+(2, 'jane_smith', 'Jane', 'Smith', '1985-08-22', 'hashedpassword2'),
+(3, 'alice_jones', 'Alice', 'Jones', '1992-11-30', 'hashedpassword3'),
+(4, 'bob_brown', 'Bob', 'Brown', '1988-02-10', 'hashedpassword4');
+(5, 'emily_clark', 'Emily', 'Clark', '2000-03-12', 'hashedpassword5'),
+(6, 'michael_williams', 'Michael', 'Williams', '2001-07-22', 'hashedpassword6'),
+(7, 'sophia_evans', 'Sophia', 'Evans', '2002-10-09', 'hashedpassword7'),
+(8, 'jack_thompson', 'Jack', 'Thompson', '2003-05-17', 'hashedpassword8'),
+(9, 'olivia_martin', 'Olivia', 'Martin', '2004-12-30', 'hashedpassword9');
+
+-- Insert data into Friends table
+INSERT INTO Friends (FriendID, FriendWhoAdded, FriendBeingAdded, IsAccepted) VALUES
+(1, 1, 2, TRUE),
+(2, 2, 3, TRUE),
+(3, 3, 1, FALSE),
+(4, 4, 2, TRUE);
+
+-- Insert data into Groups table
+INSERT INTO Groups (GroupID, GroupName, CreatedBy) VALUES
+(1, 'Tech Enthusiasts', 1),
+(2, 'Book Club', 2),
+(3, 'Fitness Fanatics', 3),
+(4, 'Travelers', 4);
+
+-- Insert data into Posts table
+INSERT INTO Posts (PostID, PostDescription, PostedBy, IsPublic, IsOnlyForFriends, GroupID) VALUES
+(1, 'New tech gadget review!', 1, TRUE, FALSE, 1),
+(2, 'Discussing the latest bestseller.', 2, TRUE, FALSE, 2),
+(3, '5K run tomorrow morning!', 3, FALSE, TRUE, 3),
+(4, 'Next trip to Paris?', 4, TRUE, FALSE, 4);
+
+-- Insert data into Group Membership Requests table
+INSERT INTO GroupMembershipRequests (GroupMemberShipRequestsID, GroupID, GroupMemberUserID, IsGroupMemberShipAccepted) VALUES
+(1, 1, 2, TRUE),
+(2, 2, 3, FALSE),
+(3, 3, 1, TRUE),
+(4, 4, 2, TRUE);
+
+-- Updated data for the problem 7
+
+-- Insert additional posts visible only for the group with a group_id of 2
+INSERT INTO Posts (PostID, PostDescription, PostedBy, IsPublic, IsOnlyForFriends, GroupID) VALUES
+(5, 'Book discussion for members only.', 2, FALSE, TRUE, 2),
+(6, 'Exclusive content for group members.', 2, FALSE, TRUE, 2);
+
+-- Insert additional posts for other groups to ensure differentiation
+INSERT INTO Posts (PostID, PostDescription, PostedBy, IsPublic, IsOnlyForFriends, GroupID) VALUES
+(7, 'Travel tips for everyone.', 4, TRUE, FALSE, 4),
+(8, 'Fitness challenges open to all.', 3, TRUE, FALSE, 3);
